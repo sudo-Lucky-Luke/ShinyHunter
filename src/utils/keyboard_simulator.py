@@ -32,8 +32,7 @@ class KeyboardSimulator:
                 time.sleep(0.01)
 
     def press_continue(self) -> None:
-        """Press the continue button."""
-
+        """Press the continue button (A)."""
         self._press_key([self.keys_config.a], True)
         self._press_key([self.keys_config.a], False)
 
@@ -41,3 +40,15 @@ class KeyboardSimulator:
         """Press the key combination for reset."""
         self._press_key(self.reset_key_combination, True)
         self._press_key(self.reset_key_combination, False)
+
+    # --- Neu: einzelne Taps für B und Start ---
+
+    def press_b(self) -> None:
+        """Press the B button once."""
+        self._press_key([self.keys_config.b], True)
+        self._press_key([self.keys_config.b], False)
+
+    def press_start(self) -> None:
+        """Press the Start button once."""
+        self._press_key([self.keys_config.start], True)
+        self._press_key([self.keys_config.start], False)
